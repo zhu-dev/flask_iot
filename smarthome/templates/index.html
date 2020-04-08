@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description"
+          content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+    <!-- Twitter meta-->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@pratikborsadiya">
+    <meta property="twitter:creator" content="@pratikborsadiya">
+    <!-- Open Graph Meta-->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Vali Admin">
+    <meta property="og:title" content="Vali - Free Bootstrap 4 admin theme">
+    <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
+    <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
+    <meta property="og:description"
+          content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+    <title>基于NBIOT的智能家居主页</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="app sidebar-mini rtl">
+<!-- Navbar-->
+<header class="app-header"><a class="app-header__logo" href="#">My Home</a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
+                                    aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
+    <ul class="app-nav">
+        <!-- User Menu-->
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i
+                class="fa fa-user fa-lg"></i></a>
+            <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> 设置</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> 账号</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out fa-lg"></i> 注销</a></li>
+            </ul>
+        </li>
+    </ul>
+</header>
+<!-- Sidebar menu-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+    <div class="app-sidebar__user">
+        <img class="app-sidebar__user-avatar" src="static/img/pp.jpg" alt="User Image">
+        <div>
+            <p class="app-sidebar__user-name">朱红喜</p>
+            <p class="app-sidebar__user-designation">1600200639</p>
+        </div>
+    </div>
+    <ul class="app-menu">
+        <li><a class="app-menu__item active" href="#"><i class="app-menu__icon fa fa-dashboard"></i><span
+                class="app-menu__label">家庭</span></a></li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+                class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">房间</span><i
+                class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="#" onclick="onClickHandle('parlour')"><i
+                        class="icon fa fa-circle-o"></i>客厅</a></li>
+                <li><a class="treeview-item" href="#" onclick="onClickHandle('bedroom')"><i
+                        class="icon fa fa-circle-o"></i>卧室</a></li>
+                <li><a class="treeview-item" href="#" onclick="onClickHandle('kitchen')"><i
+                        class="icon fa fa-circle-o"></i>厨房</a></li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <h1>我的家庭主页</h1>
+            <p>based on flask and bootstrap</p>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="tile">
+                <h3 class="tile-title">控制开关面板</h3>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <div class="row embed-responsive-item">
+                        <div class="col-md-6">
+                            <p><b>客厅灯开关</b></p>
+                            <div class="toggle">
+                                <label>
+                                    <input type="checkbox" onclick="onChangeHandle(this,'parlour_light')"><span
+                                        class="button-indecator"></span>
+                                </label>
+                            </div>
+                            <p><b>卧室灯开关</b></p>
+                            <div class="toggle">
+                                <label>
+                                    <input type="checkbox" onclick="onChangeHandle(this,'bedroom_light')"><span
+                                        class="button-indecator"></span>
+                                </label>
+                            </div>
+                            <p><b>厨房灯开关</b></p>
+                            <div class="toggle">
+                                <label>
+                                    <input type="checkbox" onclick="onChangeHandle(this,'kitchen_light')"><span
+                                        class="button-indecator"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p><b>卧室窗帘</b></p>
+                            <div class="toggle">
+                                <label>
+                                    <input type="checkbox" onclick="onChangeHandle(this,'curtain')"><span
+                                        class="button-indecator"></span>
+                                </label>
+                            </div>
+                            <p><b>厨房风机</b></p>
+                            <div class="toggle">
+                                <label>
+                                    <input type="checkbox" onclick="onChangeHandle(this,'fan')"><span
+                                        class="button-indecator"></span>
+                                </label>
+                            </div>
+                            <p><b>拓展</b></p>
+                            <div class="toggle">
+                                <label>
+                                    <input type="checkbox" onclick="onChangeHandle(this,'extend')"><span
+                                        class="button-indecator"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="tile">
+                <h3 class="tile-title">温度数据趋势</h3>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="tile">
+                <h3 class="tile-title">湿度数据趋势</h3>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <canvas class="embed-responsive-item" id="lineChartDemo2"></canvas>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="tile">
+                <h3 class="tile-title">空气质量数据趋势</h3>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <canvas class="embed-responsive-item" id="lineChartDemo3"></canvas>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</main>
+<!-- Essential javascripts for application to work-->
+<script src="static/js/jquery-3.2.1.min.js"></script>
+<script src="static/js/popper.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/main.js"></script>
+<!-- The javascript plugin to display page loading on top-->
+<script src="static/js/plugins/pace.min.js"></script>
+<!-- Page specific javascripts-->
+<script type="text/javascript" src="static/js/plugins/chart.js"></script>
+{#<script type="text/javascript" src="static/js/index_custom.js"></script>#}
+<script type="text/javascript" src="static/js/constant.js"></script>
+
+<script type="text/javascript">
+
+    var room_status = "parlour";
+    //页面加载就绪后，请求数据
+    $(document).ready(function () {
+        getData('parlour')
+    })
+</script>
+<script type="text/javascript">
+    function onChangeHandle(obj, method) {
+        if (obj.checked) {
+            //打开
+            commands(method, true);
+            console.log("open")
+        } else {
+            //关闭
+            commands(method, false);
+            console.log("close")
+        }
+
+    }
+
+    function onClickHandle(room) {
+        room_status = room;
+        //请求数据
+        getData(room);
+        console.log("click")
+    }
+</script>
+
+<script type="text/javascript">
+    function commands(method, isOpen) {
+        switch (method) {
+            case "parlour_light":
+                if (isOpen == true) {
+                    json_data = {"method": "lighting_parlour", "paras": {"open": "O"}};
+                    sendCommand(json_data)
+                } else {
+                    json_data = {"method": "lighting_parlour", "paras": {"open": "C"}};
+                    sendCommand(json_data)
+                }
+                break;
+            case "bedroom_light":
+                if (isOpen == true) {
+                    json_data = {"method": "lighting_bedroom", "paras": {"open": "O"}};
+                    sendCommand(json_data)
+                } else {
+                    json_data = {"method": "lighting_bedroom", "paras": {"open": "C"}};
+                    sendCommand(json_data)
+                }
+                break;
+            case "kitchen_light":
+                if (isOpen == true) {
+                    json_data = {"method": "lighting_kitchen", "paras": {"open": "O"}};
+                    sendCommand(json_data)
+                } else {
+                    json_data = {"method": "lighting_kitchen", "paras": {"open": "C"}};
+                    sendCommand(json_data)
+                }
+                break;
+            case "curtain":
+                if (isOpen == true) {
+                    json_data = {"method": "curtain", "paras": {"open": "O"}};
+                    sendCommand(json_data)
+                } else {
+                    json_data = {"method": "curtain", "paras": {"open": "C"}};
+                    sendCommand(json_data)
+                }
+                break;
+            case "fan":
+                if (isOpen == true) {
+                    json_data = {"method": "fanning", "paras": {"open": "O"}};
+                    sendCommand(json_data)
+                } else {
+                    json_data = {"method": "fanning", "paras": {"open": "C"}};
+                    sendCommand(json_data)
+                }
+                break;
+            case "extend":
+                if (isOpen == true) {
+                    json_data = {"method": "extend_other", "paras": {"open": "O"}};
+                    sendCommand(json_data)
+                } else {
+                    json_data = {"method": "extend_other", "paras": {"open": "C"}};
+                    sendCommand(json_data)
+                }
+                break;
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function sendCommand(json_data) {
+        $.ajax({
+            url: home_commands_url,
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(json_data),
+            success: function (data) {
+                console.log(json_data)
+                console.log(data)
+            }
+        });
+
+    }
+</script>
+请求数据
+<script type="text/javascript">
+    function getData(room) {
+        $.ajax({
+            url: home_data_url,
+            type: "GET",
+            dataType: "json",
+            data: {room: room},
+            success: function (data) {
+                if (data.code == 2) {
+                    console.log(data.data);
+                    updateData(data.data)
+                } else {
+                    console.log(data.message);
+                }
+            }
+        })
+
+    }
+</script>
+<script type=text/javascript>
+    function updateData(results) {
+
+        var labels_list = [];
+        var temperature_list = [];
+        var humidity_list = [];
+        var smoke_list = [];
+        var time_label = null;
+
+        for (data of results) {
+            time_label = data.time.substr(11);
+            labels_list.push(time_label);
+            temperature_list.push(data.temperature);
+            humidity_list.push(data.humidity);
+            smoke_list.push(data.smoke);
+        }
+        var data1 = {
+            //labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+            labels: labels_list.reverse(),
+            datasets: [
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: temperature_list.reverse()
+                }
+            ]
+        };
+        var data2 = {
+            //labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+            labels: labels_list.reverse(),
+            datasets: [
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: humidity_list.reverse()
+                }
+            ]
+        };
+        var data3 = {
+            //labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+            labels: labels_list.reverse(),
+            datasets: [
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: smoke_list.reverse()
+                }
+            ]
+        };
+        var lineChartConf = {
+            scaleStartValue: null
+        };
+
+        var ctxl = $("#lineChartDemo").get(0).getContext("2d");
+        var lineChart = new Chart(ctxl).Line(data1, lineChartConf);
+
+        var ctxl2 = $("#lineChartDemo2").get(0).getContext("2d");
+        var lineChart2 = new Chart(ctxl2).Line(data2);
+
+        var ctxl3 = $("#lineChartDemo3").get(0).getContext("2d");
+        var lineChart3 = new Chart(ctxl3).Line(data3);
+    }
+</script>
+
+<script type="text/javascript">
+    window.setInterval(updateInterval, 7000);
+
+    function updateInterval() {
+        $.ajax({
+            url: home_data_url,
+            type: "GET",
+            dataType: "json",
+            data: {room: room_status},
+            success: function (data) {
+                if (data.code == 2) {
+                    console.log(data.data);
+                    updateData(data.data)
+                } else {
+                    console.log(data.message);
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>
